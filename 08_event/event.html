@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body>
+    <!-- HTML events are "things" that happen to HTML elements. -->
+    <!-- When JavaScript is used in HTML pages, JavaScript can "react" on these events. -->
+    <h2>ShahRukh Khan Image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://2.bp.blogspot.com/-Z1kwrvNUwTo/VufT774jE2I/AAAAAAAAMFs/L_vfZU-r1yIuVvEayQOLCJmqzZUDCxMpQ/s1600/shahrukh-khan-hd-whatsup-image.jpg" alt="photoshop"></li>
+            <li><img width="200px" id="Love" src="https://imgs.search.brave.com/HDtAzni13ijTiJCcRhKo5kviQs4ye-pnoH7PhA7Th5Y/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDM5ODkz/MzQuanBn" alt=""></li>
+            <li><img width="200px" id="srk" src="https://imgs.search.brave.com/xS5RzD2sTvUoXOSz0oAA2J2UhX12VBiEC79ksFLdx18/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VkaWFtb25k/LmNvbS9ibG9nL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzEw/L1NoYWgtUnVraC1L/aGFuLWltYWdlcy0x/MTE2LmpwZw" alt=""></li>
+            <li><img width="200px" id="king" src="https://imgs.search.brave.com/VKht6_mOLMXVQuCbqexRJTySRr1uyCwyQ5LRmlJwBY8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9yZXNp/emluZy5mbGl4c3Rl/ci5jb20vbWUyakVm/aTNrT1VYY0c1Rkd0/Qy1zTU00OTlvPS8z/MDB4MzAwL3YyL2h0/dHA6Ly9tZWRpYS5i/YXNlbGluZXJlc2Vh/cmNoLmNvbS9pbWFn/ZXMvMTY0MTQzNC8x/NjQxNDM0X2Z1bGwu/anBn" alt=""></li>
+            <li><img width="200px" id="kingofbollywood" src="https://imgs.search.brave.com/GsYJg1PLuQHwcmELj1evwJ3PrzKddOYrDOOqfmkyKWY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmV3czE4LmNv/bS9pYm5saXZlL3Vw/bG9hZHMvMjAxNy8x/MS9TaGFoLVJ1a2gt/S2hhbi1hdC10aGUt/TWlsbGVubml1bS1E/b21lLUxvbmRvbi5q/cGc_aW1wb2xpY3k9/d2Vic2l0ZSZ3aWR0/aD0wJmhlaWdodD0w" alt=""></li>
+            <li><img width="200px" id="pathan" src="https://imgs.search.brave.com/FSWk2zJ1XZivzPgZsYCjG2tBCSjWoLCUaXEBGQg4dy4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMzcw/OTU1MS5qcGc" alt=""></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // Study Metarial
+    /*
+    type :- The type event property returns the type of the triggered event
+    timestamp :-The timeStamp read-only property of the Event interface returns the time (in milliseconds) at which the event was created.
+    defaultPrevented :-The defaultPrevented event property checks whether the preventDefault() method was called for the event.
+    
+    target, toElement, srcElement, currentTarget, clientX, clintY, screenx, screenY, altkey, ctrlkey, shiftkey, keycode
+    */
+   
+    // JavaScript is a sequensaly Run Language
+    // document.getElementById('srk').addEventListener('click',function(){
+    //     alert('Click on SRK')
+    // },false)   //false is a default value if you write or not write your program is run
+
+    //false is a bubble event
+    //true is a capturing event
+    
+    // document.getElementById('image').addEventListener('click',function(e){
+    //     console.log("Clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('Love').addEventListener('click',function(e){
+    //     console.log("Love Clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    //How to remove image 
+    document.querySelector('#image').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        // if(e.target.tagName === 'IMG'){
+        //     console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        
+    })
+
+</script>
+</html>
